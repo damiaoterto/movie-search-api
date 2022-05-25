@@ -6,11 +6,11 @@ services:
     depends_on:
       - mailisearch
     ports:
-      - "3000:3000"
+      - 3000:3000
 
   mailisearch:
     image: getmeili/meilisearch:v0.27.1
     ports:
-      - "7700:7700"
+      - 7700:7700
     volumes:
       - ./.docker/meili_data:/meili_data
