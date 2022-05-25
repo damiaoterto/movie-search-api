@@ -1,0 +1,8 @@
+{
+  "name": "movie-search-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:damiaoterto/movie-search-api.git",
+  "author": "Francisco Damião Terto <hi@damiaojunior.me>",
+  "license": "MIT"
+}
