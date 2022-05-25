@@ -4,6 +4,7 @@ export const handler = async (req, res) => {
   if (req.url.includes('/movies')) {
     res.writeHead(200);
     res.end(JSON.stringify({ movies: [] }));
+    return;
   }
 
   res.writeHead(404);
