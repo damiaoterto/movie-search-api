@@ -10,15 +10,19 @@
     "build": "npx babel src --out-dir dist",
     "start": "node dist/index.js",
     "dev": "npx nodemon --exec babel-node src/index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "supertest": "^6.2.3"
+  },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.0",
     "@babel/node": "^7.17.10",
     "@babel/plugin-proposal-class-properties": "^7.17.12",
     "@babel/preset-env": "^7.18.0",
+    "@types/jest": "^27.5.1",
     "babel-jest": "^28.1.0",
     "jest": "^28.1.0",
     "nodemon": "^2.0.16",
