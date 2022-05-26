@@ -1,0 +1,4 @@
+MEILISEARCH_HOST=mailisearch
+MEILISEARCH_PORT=7700
+
+MOVIES_DATASET=https://docs.meilisearch.com/movies.json
