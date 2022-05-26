@@ -1,6 +1,8 @@
 import request from 'supertest';
 import { server } from '../../src/server';
 
+jest.setTimeout(30000);
+
 describe('Movies Search' , () => {
   it('should return not found message', async () => {
     const response = await request(server).get('/');
@@ -13,7 +15,7 @@ describe('Movies Search' , () => {
     const response = await request(server).get('/movies?search=star');
 
     expect(response.status).toBe(200);
-    expect(Array.isArray(response.body.movies)).toBe(true);
+    expect(Array.isArray(response.body.movies.hits)).toBe(true);
     expect(response.body).toHaveProperty('movies');
   });
 });

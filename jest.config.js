@@ -10,6 +10,7 @@ module.exports = {
     "**/__tests__/**/*.[jt]s?(x)",
     "**/?(*.)+(spec|test).[tj]s?(x)"
   ],
+  setupFilesAfterEnv: ['<rootDir>/test/setup-jest.js'],
   transform: {
     "^.+\\.js?$": "babel-jest"
   },
