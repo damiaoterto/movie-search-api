@@ -36,3 +36,8 @@ yarn install
 ```
 docker-compose up -d --build
 ```
+
+### Search a movie
+```
+http://localhost:3000/movies?search=harry
+```
