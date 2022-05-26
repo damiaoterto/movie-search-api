@@ -1,20 +1,31 @@
 import 'dotenv/config';
-import axios from 'axios';
+import https from 'node:https';
 import { mailiSearch } from '../src/lib/meilisearch';
 
-axios.defaults.timeout = 30000;
+function getMovies() {
+  return new Promise((resolve, reject) => {
+    https.get(process.env.MOVIES_DATASET, (resp) => {
+      let data = '';
 
-async function getMovies() {
-  console.log('Getting movies...');
-  const { data } = await axios.get(process.env.MOVIES_DATASET);
-  return data;
+      console.log('Fetching movies...');
+
+      resp.on('data', (chunk) => {
+        data += chunk;
+      });
+
+      resp.on('end', () => {
+        resolve(JSON.parse(data));
+      });
+    }).on('error', (err) => {
+      reject(err);
+    });
+  });
 }
 
 async function syncMovies(movies) {
   console.log('Syncing movies...');
 
   const client = mailiSearch();
-
   await client.index('movies').addDocuments(movies)
 }
 

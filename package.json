@@ -15,7 +15,6 @@
     "test:watch": "jest --watchAll"
   },
   "dependencies": {
-    "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "env-var": "^7.1.1",
     "meilisearch": "^0.25.1",

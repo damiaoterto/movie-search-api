@@ -1,6 +1,14 @@
 version: '3.7'
 services:
 
+  movie-search-sync:
+    build:
+      context: .
+      target: builder
+    depends_on:
+      - movie-search-api
+    command: npm run sync
+
   movie-search-api:
     build: .
     depends_on:
